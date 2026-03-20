@@ -7,10 +7,10 @@ const Topics = (() => {
   let onNavigate = null;
 
   const RANK_STYLES = {
-    S: { label: "S", color: "#ef4444", bg: "rgba(239,68,68,0.15)" },
-    A: { label: "A", color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },
-    B: { label: "B", color: "#3b82f6", bg: "rgba(59,130,246,0.10)" },
-    C: { label: "C", color: "#6b7280", bg: "rgba(107,114,128,0.10)" },
+    S: { label: "S", color: "#c0392b", bg: "#fdecea" },
+    A: { label: "A", color: "#b8860b", bg: "#fef9e7" },
+    B: { label: "B", color: "#2874a6", bg: "#ebf5fb" },
+    C: { label: "C", color: "#707070", bg: "#f2f2f2" },
   };
 
   async function init(callback) {

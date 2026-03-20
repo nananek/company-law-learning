@@ -10,14 +10,14 @@ const LawMap = (() => {
   let onArticleClick = null;
 
   const PART_COLORS = {
-    "root-part1": "#3B82F6",
-    "root-part2": "#10B981",
-    "root-part3": "#14B8A6",
-    "root-part4": "#F59E0B",
-    "root-part5": "#8B5CF6",
-    "root-part6": "#EC4899",
-    "root-part7": "#6B7280",
-    "root-part8": "#EF4444",
+    "root-part1": "#2874a6",
+    "root-part2": "#1a7a4c",
+    "root-part3": "#0e766e",
+    "root-part4": "#b8860b",
+    "root-part5": "#6c3483",
+    "root-part6": "#a93282",
+    "root-part7": "#5d6d7e",
+    "root-part8": "#c0392b",
   };
 
   function getPartColor(nodeId) {
