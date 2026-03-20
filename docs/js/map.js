@@ -228,6 +228,18 @@ const LawMap = (() => {
       item.className = "map-article-item";
       item.style.setProperty("--part-color", color);
 
+      // Importance rank badge
+      const rank = typeof Topics !== "undefined" ? Topics.getArticleRank(art.num) : null;
+      if (rank) {
+        const badge = document.createElement("span");
+        badge.className = `rank-badge rank-${rank}`;
+        const rs = Topics.RANK_STYLES[rank];
+        badge.style.color = rs.color;
+        badge.style.background = rs.bg;
+        badge.textContent = rank;
+        item.appendChild(badge);
+      }
+
       const numEl = document.createElement("span");
       numEl.className = "map-article-num";
       numEl.textContent = art.title;

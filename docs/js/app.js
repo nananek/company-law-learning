@@ -3,8 +3,9 @@
  */
 (async function () {
   const state = {
-    path: [],         // [{id, name}, ...]
+    path: [],
     hierarchyData: null,
+    currentView: "structure",  // "structure" | "topics"
   };
 
   // Load hierarchy data
@@ -14,23 +15,66 @@
   // Initialize article panel
   ArticlePanel.init();
 
+  // Initialize topics
+  await Topics.init((articleNum, sectionId) => {
+    // Navigate from topics view: switch to structure and show article
+    if (articleNum) {
+      switchView("structure");
+      navigateTo(sectionId);
+      ArticlePanel.showArticleByNum(articleNum, sectionId);
+    } else {
+      switchView("structure");
+      navigateTo(sectionId);
+    }
+  });
+
   // Initialize map
   LawMap.init(state.hierarchyData, {
     onSectionClick: (node) => {
       navigateTo(node.id);
     },
     onArticleClick: (node) => {
-      // Leaf section - navigate to it (shows article list in main area)
       navigateTo(node.id);
     },
   });
 
   // Initialize search
   Search.init((item) => {
+    if (state.currentView !== "structure") {
+      switchView("structure");
+    }
     const sectionId = item.sectionId;
     navigateTo(sectionId);
     ArticlePanel.showArticleByNum(item.num, sectionId);
   });
+
+  // === View tab switching ===
+  const tabs = document.querySelectorAll(".view-tab");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      switchView(tab.dataset.view);
+    });
+  });
+
+  function switchView(view) {
+    state.currentView = view;
+    tabs.forEach(t => t.classList.toggle("active", t.dataset.view === view));
+
+    const breadcrumb = document.getElementById("breadcrumb");
+
+    if (view === "topics") {
+      breadcrumb.style.display = "none";
+      Topics.render();
+      ArticlePanel.hide();
+    } else {
+      breadcrumb.style.display = "";
+      if (state.path.length > 0) {
+        navigateTo(state.path[state.path.length - 1].id);
+      } else {
+        LawMap.zoomToRoot();
+      }
+    }
+  }
 
   // Navigation
   function navigateTo(nodeId) {
@@ -39,7 +83,6 @@
 
     LawMap.zoomTo(nodeId);
 
-    // Build path from root
     const path = [];
     let cur = node;
     while (cur && cur._parent) {
@@ -50,8 +93,6 @@
     updateBreadcrumb();
     updateHash();
     ArticlePanel.hide();
-
-    // Scroll map to top
     document.getElementById("map-container").scrollTop = 0;
   }
 
@@ -114,9 +155,17 @@
       return;
     }
 
+    if (hash === "topics") {
+      switchView("topics");
+      return;
+    }
+
     const parts = hash.split("/");
     const targetId = parts[parts.length - 1];
     if (targetId && targetId !== "root") {
+      if (state.currentView !== "structure") {
+        switchView("structure");
+      }
       navigateTo(targetId);
     }
   }
