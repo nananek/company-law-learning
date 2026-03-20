@@ -10,7 +10,6 @@
   <header id="header">
     <div class="header-left">
       <h1 id="site-title">会社法条文マップ</h1>
-      <span class="article-count" id="article-count"></span>
     </div>
     <div class="header-right">
       <div class="search-wrapper">
@@ -27,9 +26,7 @@
   </nav>
 
   <main id="main">
-    <div id="treemap-container">
-      <svg id="treemap"></svg>
-    </div>
+    <div id="map-container"></div>
     <aside id="article-panel" class="hidden">
       <div class="panel-header">
         <button id="panel-close" aria-label="閉じる">&times;</button>
@@ -40,9 +37,8 @@
     </aside>
   </main>
 
-  <script src="lib/d3.v7.min.js"></script>
   <script src="lib/fuse.min.js"></script>
-  <script src="js/treemap.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/article-panel.js"></script>
   <script src="js/search.js"></script>
   <script src="js/app.js"></script>
