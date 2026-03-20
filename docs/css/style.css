@@ -22,7 +22,8 @@
 
 html, body {
   height: 100%;
-  font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS明朝E", serif;
+  font-family: "Hiragino Mincho ProN", "Noto Serif JP", "Yu Mincho", "YuMincho", "HGS明朝E", serif;
+  font-size: 16px;
   background: var(--bg);
   color: var(--text);
   -webkit-text-size-adjust: 100%;
@@ -48,7 +49,7 @@ html, body {
 }
 
 #site-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -65,8 +66,8 @@ html, body {
 }
 
 .view-tab {
-  padding: 4px 14px;
-  font-size: 12px;
+  padding: 5px 14px;
+  font-size: 13px;
   font-family: inherit;
   border: none;
   cursor: pointer;
@@ -102,8 +103,8 @@ html, body {
 
 #search-input {
   width: 100%;
-  padding: 7px 12px;
-  font-size: 13px;
+  padding: 8px 12px;
+  font-size: 14px;
   background: var(--bg);
   color: var(--text);
   border: 1px solid var(--border);
@@ -152,18 +153,18 @@ html, body {
 }
 
 .search-result-item .result-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .search-result-item .result-caption {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-top: 2px;
 }
 
 .search-result-item .result-path {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-dim);
   margin-top: 2px;
 }
@@ -183,7 +184,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
+  font-size: 13px;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -265,19 +266,19 @@ html, body {
 }
 
 .map-part-num {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-dim);
   white-space: nowrap;
-  min-width: 44px;
+  min-width: 48px;
 }
 
 .map-part-name {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
 }
 
 .map-part-range {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-left: auto;
   white-space: nowrap;
@@ -308,15 +309,15 @@ html, body {
 }
 
 .map-card-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
 }
 
 .map-card-range {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-dim);
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 /* Drill-down view: grid of equal cards */
@@ -341,19 +342,19 @@ html, body {
 }
 
 .map-drill-card-num {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-dim);
 }
 
 .map-drill-card-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin-top: 2px;
   line-height: 1.4;
 }
 
 .map-drill-card-range {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-top: 4px;
 }
@@ -366,10 +367,10 @@ html, body {
 }
 
 .map-drill-child-tag {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-muted);
   background: var(--bg);
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 3px;
   border: 1px solid var(--border);
 }
@@ -398,14 +399,14 @@ html, body {
 }
 
 .map-article-num {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--accent);
   white-space: nowrap;
 }
 
 .map-article-caption {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -450,13 +451,13 @@ html, body {
 }
 
 #panel-title {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
   padding-right: 30px;
 }
 
 #panel-caption {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-top: 3px;
 }
@@ -478,19 +479,19 @@ html, body {
 }
 
 .paragraph-text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2;
 }
 
 .article-items {
   margin-top: 8px;
-  padding-left: 12px;
+  padding-left: 14px;
 }
 
 .article-item {
   margin-bottom: 8px;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
 .item-title {
@@ -506,8 +507,8 @@ html, body {
 
 .article-subitem {
   margin-bottom: 4px;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
   color: var(--text-muted);
 }
 
@@ -537,11 +538,11 @@ html, body {
 
 .section-article-link .art-num {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .section-article-link .art-caption {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-left: 8px;
 }
@@ -574,7 +575,7 @@ html, body {
 /* === Rank Badges === */
 .rank-badge {
   display: inline-block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   font-family: system-ui, sans-serif;
   padding: 1px 5px;
@@ -592,14 +593,14 @@ html, body {
 .topics-legend {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
   padding: 10px 14px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 5px;
   margin-bottom: 16px;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .legend-label {
@@ -610,8 +611,8 @@ html, body {
 
 .legend-desc {
   color: var(--text-dim);
-  margin-right: 6px;
-  font-size: 10px;
+  margin-right: 8px;
+  font-size: 12px;
 }
 
 .topics-category {
@@ -619,7 +620,7 @@ html, body {
 }
 
 .topics-category-name {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   padding-bottom: 6px;
   margin-bottom: 10px;
@@ -647,14 +648,14 @@ html, body {
 }
 
 .topic-card-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .topic-card-note {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.8;
   margin-top: 6px;
 }
 
@@ -667,7 +668,7 @@ html, body {
 
 .topic-article-link {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text);
   background: var(--bg);
   padding: 3px 7px;
@@ -685,7 +686,7 @@ html, body {
 
 .topic-section-link {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--accent);
   text-decoration: none;
   margin-top: 8px;
